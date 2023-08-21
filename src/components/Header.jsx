@@ -1,8 +1,21 @@
+import React from "react"
+import adopt from "../assets/logo.png"
+import "./Header.css"
 
-export function Header () {
-    return (
-        <div>
-            <h1>este es el header</h1>
-        </div>
+
+export default function Header () {
+    return(
+        <>
+            <header>
+                <img src={adopt} alt="" className="img"/>
+
+                <ul>
+                    <li>Registro</li>
+                    <li>Animales</li>
+                    <li>Refugios</li>
+                    <li>Dona</li>
+                </ul>
+            </header>
+        </>
     )
 }
