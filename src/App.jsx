@@ -17,7 +17,7 @@ function App() {
   }
 
   return (
-    <div>
+    <div className='main-container'>
       <Header/>
       <h1>Esta es la app</h1>
       <Button onClick={handleChange} variant="contained">{state}</Button>

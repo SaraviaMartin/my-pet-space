@@ -6,8 +6,9 @@ import "./Header.css"
 export default function Header () {
     return(
         <>
-            <header>
+            <header className="header">
                 <img src={adopt} alt="" className="img"/>
+               
 
                 <ul>
                     <li>Registro</li>
