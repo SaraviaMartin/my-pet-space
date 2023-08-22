@@ -2,25 +2,39 @@ import './App.css'
 import { useState, useEffect } from 'react'
 import Button from '@mui/material/Button';
 import Header from './components/Header';
+import { createTheme, ThemeProvider } from '@mui/material/styles';
+import { blue, lime, purple } from '@mui/material/colors';
+import Pets from './components/Pets';
+
+
+const theme = createTheme({
+  palette: {
+    primary: lime,
+    secondary: blue,
+  },
+});
 
 
 function App() {
-  const [state, setState] = useState('Click me');
+  const [state, setState] = useState('Quiero saber mas');
 
 
   const handleChange = () => {
-    if(state === 'Click me'){
-      setState('Ahora cambia el estado')
+    if(state === 'Quiero saber mas'){
+      setState('Registrarme')
     }else{
-      setState('Click me')
+      setState('Quiero saber mas')
     }
   }
 
   return (
     <div className='main-container'>
       <Header/>
-      <h1>Esta es la app</h1>
-      <Button onClick={handleChange} variant="contained">{state}</Button>
+      <ThemeProvider theme={theme}>
+      <Pets/>
+      <Button onClick={handleChange} variant="contained" color="secondary" sx={{ ml: 2 }}>{state}</Button>
+    </ThemeProvider>
+      
     </div>
   );
 }
